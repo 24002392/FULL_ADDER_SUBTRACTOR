@@ -1,6 +1,6 @@
 # FULL_ADDER_SUBTRACTOR
 
-Implementation-of-Full-Adder-and-Full-subtractor-circuit
+FULL ADDER AND FULL SUBTRACTOR
 
 **AIM:**
 
@@ -44,12 +44,62 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+FULL ADDER:
+
+module fulladd (a,b,c,sum,carry);
+
+input a,b,c,
+
+output sum,carry);
+
+wire w1,w2,w3;
+
+assign sum=a^b^c;
+
+assign w1=a&b;
+
+assign w2=b&c;
+
+assign w3=c&a;
+
+assign carry=w1|w2|w3;
+
+endmodule
+
+
+FULL SUBTRACTOR:
+
+module fullsub(a,b,c,diff,borr);
+
+input a,b,c;
+
+output diff,borr;
+
+wire w1,w2,w3,w4,w5,w6;
+
+xor g1(diff,a,b,c);
+
+and g2(w4,w1,b);
+
+and g3(w5,w1,b);
+
+and g4(w6,b,c);
+
+or g5(borr,w4,w5,w6);
+
+endmodule
 
 **RTL Schematic**
 
+![full adder](https://github.com/user-attachments/assets/7a6b4e88-db3a-4ea2-8434-295ee110d7fd)
+
+![full sub](https://github.com/user-attachments/assets/ee35ff3c-f9dc-4a59-a8a3-af6f1e06b2e1)
+
 **Output Timing Waveform**
+
+![full adder wave form](https://github.com/user-attachments/assets/92763941-fc6e-4387-b5df-2ee6d100c0da)
+
+![full sub wave form](https://github.com/user-attachments/assets/67947172-dee3-47e8-b92c-4696d280169a)
 
 **Result:**
 
